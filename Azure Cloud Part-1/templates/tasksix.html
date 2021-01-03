@@ -1,0 +1,76 @@
+<a class="navbar-brand" href="{{ url_for('index') }}">Home</a>                    
+      <div style="background-color:#00FF99; color:#000000">
+        <h2 >Assignment-2</h1>
+        <h3 >1001772180</h2>
+        <h4 >Nirmit Rajeshbhai shah</h3>
+      </div>
+	 <h1>THE DETAILS OF THE EARTHQUAKE</h1>
+    <h2>
+	 <table>
+	 <tr>
+	 <td><b>EarthQuake Time<b></td>
+	 <td><b>Earthquake Latitude </b></td>
+	 <td><b>Earthquake Longitude</b></td>
+	 <td><b>Earthquake Depth</b></td>
+	 <td><b>Earthquake Mag</b></td>
+	 <td><b>Earthquake Gap</b></td>
+	 <td><b>Earthquake ID</b></td>
+	 <td><b>Earthquake Place</b><br></td>
+	 <td><b>Earthquake DepthError</b></td>
+	 <td><b>Earthquake Location Source</b></td>
+    </tr>
+<tr><td style="width:217px">
+    {% for col1_time in col1_time %}
+      {{ col1_time }}<br>
+  {% endfor %}
+    </td>
+    <td>
+    {% for col2_latitude in col2_latitude %}
+      {{ col2_latitude }}<br>
+  {% endfor %}
+    </td>
+    <td>
+    {% for col3_longitude  in col3_longitude  %}
+      {{ col3_longitude }}<br>
+  {% endfor %}
+    </td>
+    <td>
+    {% for col4_depth  in col4_depth  %}
+      {{ col4_depth }}<br>
+  {% endfor %}
+    </td>
+    <td>
+    {% for col5_mag  in col5_mag  %}
+      {{ col5_mag }}<br>
+  {% endfor %}
+    </td>
+    <td>
+    {% for col8_gap  in col8_gap  %}
+      {{ col8_gap }}<br>
+  {% endfor %}
+    </td>
+    <td>
+    {% for col12_id  in col12_id  %}
+      {{ col12_id }}<br>
+  {% endfor %}
+    </td>
+    <td style="width:262px">
+    {% for col14_place in col14_place  %}
+      {{ col14_place }}<br>
+  {% endfor %}
+    </td>
+    <td>
+    {% for col17_deptherror  in col17_deptherror  %}
+      {{ col17_deptherror }}<br>
+  {% endfor %}
+    </td>
+    <td>
+    {% for col21_locationsource  in col21_locationsource  %}
+      {{ col21_locationsource }}<br>
+  {% endfor %}
+    </td>
+    </tr>
+    </table>
+    </body>
+</html>
+

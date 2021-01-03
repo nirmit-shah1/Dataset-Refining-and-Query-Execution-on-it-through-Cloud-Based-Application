@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <meta charset='utf-8' />
+    <script src="https://d3js.org/d3.v5.min.js" charset="utf-8"></script>
+    <style>
+        .inside {
+            font-size: 500;
+            font-weight: bold;
+            fill: white;
+        }
+
+        .legends {
+            font-weight: bold;
+            fill: red;
+        }
+    </style>
+</head>
+
+<body>
+    <a class="navbar-brand" href="{{ url_for('index') }}">Home</a>
+    <h4>Pie Chart</h4>
+   
+    <br><br>
+    Data : {{data}}
+    <script>
+        var data = {{ data| tojson}}
+
+        var width = 1200, height = 700;
+        var colors = ['#FF6633', '#FFB399', '#FF33FF', '#FFFF99', '#00B3E6',
+            '#E6B333', '#3366E6', '#999966', '#99FF99', '#B34D4D',
+            '#80B300', '#809900', '#E6B3B3', '#6680B3', '#66991A',
+            '#FF99E6', '#CCFF1A', '#FF1A66', '#E6331A', '#33FFCC',
+            '#66994D', '#B366CC', '#4D8000', '#B33300', '#CC80CC',
+            '#66664D', '#991AFF', '#E666FF', '#4DB3FF', '#1AB399',
+            '#E666B3', '#33991A', '#CC9999', '#B3B31A', '#00E680',
+            '#4D8066', '#809980', '#E6FF80', '#1AFF33', '#999933',
+            '#FF3380', '#CCCC00', '#66E64D', '#4D80CC', '#9900B3',
+            '#E64D66', '#4DB380', '#FF4D4D', '#99E6E6', '#6666FF'];
+
+        var svg = d3.select("body").append("svg")
+            .attr("width", width).attr("height", height)
+            .style("background", "white");
+        var mydata = d3.pie().sort(null).value(function (d) { return d.count; })(data);
+        var segments = d3.arc()
+            .innerRadius(0)
+            .outerRadius(200)
+            .padAngle(.05)
+            .padRadius(50);
+        var sections = svg.append("g").attr("transform", "translate(250,250)").selectAll("path").data(mydata);
+
+        sections.enter().append("path").attr("d", segments).attr("fill", (d, i) => colors[i++]);
+
+
+        var legends = svg.append("g").attr("transform", "translate(500,100)")
+            .selectAll(".legends").data(mydata);
+        var legend = legends.enter().append("g").classed("legends", true).attr("transform", function (d, i) { return "translate(0," + (i + 1) * 30 + ")"; });
+        legend.append("rect").attr("width", 20).attr("height", 20).attr("fill", (d, i) => colors[i++])
+        legend.append("text").classed("label", true).text(function (d) { return d.data.count; })
+        .attr("x", 30)
+        .attr("y", 20);
+        legend.append("text").classed("label", false).text(function (d) { return d.data.range; })
+            .attr("x", 90)
+            .attr("y", 20);
+
+    </script>
+</body>
+
+</html>

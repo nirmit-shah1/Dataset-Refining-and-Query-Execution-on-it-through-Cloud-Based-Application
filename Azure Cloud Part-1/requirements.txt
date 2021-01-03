@@ -1,0 +1,7 @@
+Flask==1.1.2
+click==6.7
+itsdangerous==0.24
+Jinja2==2.10
+MarkupSafe==1.0
+pyodbc==3.0.10
+redis==3.5.3

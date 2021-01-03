@@ -1,0 +1,48 @@
+
+
+
+{% block navbar %}
+<nav class="navbar navbar-default">
+    <div class="container">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="{{ url_for('index') }}">Home</a>
+            
+        </div>
+    </div>
+</nav>
+{% endblock %}
+
+{% block content %}
+
+<div id="title_bar" class="jumbotron jumbotron-fluid">
+  <div class="container">
+    <h2 id="main_title">Assignment-4</h1>
+    <h3 id="student_id">1001772180</h2>
+    <h4 id="student_name">Nirmit Rajeshbhai shah</h3>
+  </div>
+</div>
+<div class="container">
+  
+  
+
+<!--========================================= Task 2===================================================== -->
+<h1>Question5</h1>
+<form action="/taskone" method="post">
+Enter the Country Name:<input type="text" name="cname"></input><br>
+Enter the Starting Year:<input type="text" name="syear"></input><br>
+Enter the Ending Year:<input type="text" name="eyear"></input><br>
+<input type="submit" value="Execute Query "></input>
+</form>
+<h1>Question7</h1>
+<form action="/tasktwo" method="post">
+Enter the Country Name:<input type="text" name="cname"></input><br>
+Enter the Starting Year:<input type="text" name="syear"></input><br>
+Enter the Ending Year:<input type="text" name="eyear"></input><br>
+<input type="submit" value="Execute Query "></input>
+</form>
+
+
+</div>
+
+   
+{% endblock %}
