@@ -1,0 +1,20 @@
+<a class="navbar-brand" href="{{ url_for('index') }}">Home</a>                    
+      <div style="background-color:#00FF99; color:#000000">
+        <h2 >Assignment-1</h1>
+        <h3 >1001772180</h2>
+        <h4 >Nirmit Rajeshbhai shah</h3>
+      </div>
+	 <h1>THE DETAILS OF THE EARTHQUAKE</h1>
+	 <h1>ID DETAIL</h1>
+    {% for col1_time in col1_time %}
+      {{ col1_time }}<br>
+  {% endfor %}
+<h1>PLACE DETAIL</h1>
+    {% for col2_latitude in col2_latitude %}
+      {{ col2_latitude }}<br>
+  {% endfor %}
+<h1>TOTAL</h1>
+{{final_value}}
+        </body>
+</html>
+

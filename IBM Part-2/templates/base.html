@@ -1,0 +1,60 @@
+{% extends 'bootstrap/base.html' %}
+{% import "bootstrap/wtf.html" as wtf %}
+
+{% block styles %}
+{{super()}}
+<link rel="stylesheet" href="static/style.css">
+{% endblock %}
+
+{% block title %}
+  {% if title %}{{ title }} - {{ appname }}{% else %}{{ appname }}{% endif %}
+{% endblock %}
+
+{% block navbar %}
+    <nav class="navbar navbar-default">
+        <div class="container">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="{{ url_for('index') }}">Home</a>
+                <a class="navbar-brand" href="{{ url_for('help') }}">Help</a>
+            </div>
+        </div>
+    </nav>
+{% endblock %}
+
+{% block content %}
+    
+    <div id="title_bar" class="jumbotron jumbotron-fluid">
+      <div class="container">
+        <img src="{{url_for('static',filename='s.jpg')}}" alt="Image not available">
+        <h2 id="main_title">QUIZ-2</h1>
+        <h3 id="student_id">1001772180</h2>
+        <h4 id="student_name">Nirmit Rajeshbhai shah</h3>
+      </div>
+    </div>
+    
+    <div class="container">
+        <!--========================================= Task 1===================================================== -->
+       <h1><b>Question 5</b></h1>
+        <h3><a style="color:red"  href="{{ url_for('taskone') }}">Execute Task-1</a></h3> 
+    <!--========================================= Task 2===================================================== -->
+ <form action="/tasktwo" method="post">
+  Enter the Latitude For 1st <input type="text" name="number1"></input><br>
+  Enter the Longitude For 1st- <input type="text" name="number2"></input><br>
+  Enter the Latitude For 2nd <input type="text" name="number3"></input><br>
+  Enter the Longitude For 2nd <input type="text" name="number4"></input><br>
+  Enter the value  <input type="text" name="number5"></input><br>
+  <input type="submit" value="Execute Query"></input>
+</form>
+<h1>QUESTION 7</h1>
+<form action="/taskthree" method="post">
+  Enter the City Inital<input type="text" name="n1"></input><br>
+  Enter the Mag <input type="text" name="n2"></input><br>
+  <input type="submit" value="Execute Query"></input>
+</form>
+        
+            
+        
+    </div>
+   
+       
+{% endblock %}

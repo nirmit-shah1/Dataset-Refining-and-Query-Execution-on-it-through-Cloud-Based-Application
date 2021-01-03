@@ -1,0 +1,67 @@
+
+
+
+{% block navbar %}
+    <nav class="navbar navbar-default">
+        <div class="container">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="{{ url_for('index') }}">Home</a>
+                
+            </div>
+        </div>
+    </nav>
+{% endblock %}
+
+{% block content %}
+    
+    <div id="title_bar" class="jumbotron jumbotron-fluid">
+      <div class="container">
+        <h2 id="main_title">QUIZ-3</h1>
+        <h3 id="student_id">1001772180</h2>
+        <h4 id="student_name">Nirmit Rajeshbhai shah</h3>
+      </div>
+    </div>
+    <div class="container">
+      
+      
+    <!--========================================= Task 1===================================================== -->
+    <h1>Task-1 UPDATE THE VALUE IN THE COLUMN "locationSource" enter the old value and new value  </h1>
+ <form action="/taskone" method="post">
+  Enter the Existing value of locationSource:  <input type="text" name="val1"></input><br><br>
+  Enter the new value of locationSource:  <input type="text" name="val2"></input><br>
+
+  <input type="submit" value="Execute Query"></input>
+</form>
+        
+   <!--========================================= Task 2===================================================== -->
+   <h1>Task-2 UPDATE THE VALUE IN THE COLUMN "locationSource" enter the old value, new value and specify the range of magNst</h1>
+   <form action="/tasktwo" method="post">
+    Enter the Existing value of locationSource:  <input type="text" name="v1"></input><br><br>
+    Enter the new value of locationSource:  <input type="text" name="v2"></input><br>
+    Enter the starting value of the magNst:<input type="text" name="v3"></input><br>
+    Enter the ending value of the magNst:<input type="text" name="v4"></input><br>
+    <input type="submit" value="Execute Query"></input>
+  </form>
+   <!--========================================= Task 3===================================================== -->
+   <h1>Task-3 SELECT QUERY TO RETRIVE SOME DETAILS FROM THE TABLE WHERE magNst is specific (TIME DETAILS ARE DISPLAYED BY SIMPLE SQL)</h1>
+   <form action="/taskthree" method="post">
+    Enter the Latitude one:<input type="text" name="l1"></input><br>
+    Enter the Latitude two:<input type="text" name="l2"></input><br>
+    <input type="submit" value="Execute Query"></input>
+  </form>
+<!--========================================= Task 4===================================================== -->
+<h1>Task-4</h1>
+<form action="/taskfour" method="post">
+ Enter the Number of time you want to execute above query:<input type="text" name="n1"></input><br>
+ <input type="submit" value="Execute Query"></input>
+</form>     
+
+
+   
+               
+                
+        
+    </div>
+   
+       
+{% endblock %}
