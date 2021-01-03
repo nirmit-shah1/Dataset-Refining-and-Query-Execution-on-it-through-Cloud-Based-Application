@@ -1,0 +1,10 @@
+<a class="navbar-brand" href="{{ url_for('index') }}">Home</a>                    
+<p>THE INFORMATION ABOUT EACH WORD</p>
+
+<h1 style="background-color: green;">{{final}}</h1>
+<p>THE WORDS NOT IN LIST</p>
+<h2 style="background-color: red;">{{notfinal}}</h2>
+<form action="/taskfour" method="POST">
+    <input type="hidden" value="{{notfinal}}" name="data" >
+    <input type="submit" value="Spanish"> 
+</form>

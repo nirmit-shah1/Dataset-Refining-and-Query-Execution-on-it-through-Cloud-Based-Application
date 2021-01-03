@@ -1,0 +1,17 @@
+
+<html>
+   
+  <body>
+  <h1>Name:- Nirmit R shah</h1>
+  
+  <a class="navbar-brand" href="{{ url_for('index') }}">Home</a>                    
+  <h2>Mav-id:- 2180</h2>
+  {% if info == 'none' %}
+      <h1 style="background-color: red;">{{demo}}</h1>
+      
+      
+  {% else %}
+      <h1 style="background-color: green;">{{demo}}</h1>
+  {% endif %}
+  <br>
+  </html>

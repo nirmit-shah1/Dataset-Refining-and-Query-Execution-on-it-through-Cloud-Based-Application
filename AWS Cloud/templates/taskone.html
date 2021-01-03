@@ -1,0 +1,25 @@
+
+<html>
+   
+<body>
+<h1>Name:- Nirmit R shah</h1>
+
+<a class="navbar-brand" href="{{ url_for('index') }}">Home</a>                    
+<h2>Mav-id:- 2180</h2>
+{% if info == 'none' %}
+    <h1 style="background-color: red;">{{demo}}</h1>
+    <h2>Select From the below options</h2>
+    <form action="/tasktwo" method="POST">
+      <input type="hidden" value="{{demo}}" name="data" >
+      <input type="submit" value="SpellCheck"> 
+    </form> 
+    
+    <form action="/taskthree" method="POST">
+      <input type="hidden" value="{{demo}}" name="data" >
+      <input type="submit" value="Check"> 
+    </form> 
+{% else %}
+    <h1 style="background-color: green;">{{demo}}</h1>
+{% endif %}
+<br>
+</html>
