@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+
+{% block app_content %}
+
+{% if name %}
+Thanks for submitting your name {{ name }}!
+{% endif %}
+
+{{ wtf.quick_form(form) }}
+{% endblock %}
